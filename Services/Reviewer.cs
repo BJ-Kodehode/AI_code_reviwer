@@ -7,11 +7,12 @@ namespace AIThatJudgesYourCode
 	class Reviewer
 	{
 		private readonly Personality personality;
-		private readonly Random random = new Random();
+		private readonly Random random;
 
-		public Reviewer(Personality personality)
+		public Reviewer(Personality personality, Random random)
 		{
 			this.personality = personality;
+			this.random = random;
 		}
 
 		public void PrintReview(CodeReport report)

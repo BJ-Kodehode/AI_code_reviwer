@@ -5,6 +5,8 @@ namespace AIThatJudgesYourCode
 {
 	internal class Program
 	{
+		private static readonly Random Random = new Random();
+
 		static void Main()
 		{
 			Console.Title = "AI That Judges Your Code";
@@ -61,7 +63,7 @@ namespace AIThatJudgesYourCode
 			CodeAnalyzer analyzer = new CodeAnalyzer();
 			CodeReport report = analyzer.Analyze(code);
 
-			Reviewer reviewer = new Reviewer(personality);
+			Reviewer reviewer = new Reviewer(personality, Random);
 
 			reviewer.PrintReview(report);
 
