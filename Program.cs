@@ -66,8 +66,11 @@ namespace AIThatJudgesYourCode
 			reviewer.PrintReview(report);
 
 			Console.WriteLine();
-			Console.WriteLine("Press any key to exit...");
-			Console.ReadKey();
+			if (!Console.IsInputRedirected)
+			{
+				Console.WriteLine("Press any key to exit...");
+				Console.ReadKey(true);
+			}
 		}
 
 		static void PrintHeader()
